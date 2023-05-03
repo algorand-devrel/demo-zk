@@ -20,8 +20,8 @@ from .util import check_size, encode
 
 
 curve = "BN254"
-curve_g1 = f"{curve}_G1"
-curve_g2 = f"{curve}_G2"
+curve_g1 = f"{curve}g1"
+curve_g2 = f"{curve}g2"
 
 # Depends on keysize (bls == 48, bn254 == 32)
 key_size = 32

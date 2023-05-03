@@ -1,4 +1,4 @@
-#pragma version 10
+#pragma version 9
 intcblock 0 1 672 288 192
 bytecblock 0x 0x1a0111ea397fe69a4b1ba7b6434bacd764774b84f38512bf6730d2a0f6b0f6241eabfffeb153ffffb9feffffffffaaab 0x766b 0x068101
 txn NumAppArgs
@@ -177,7 +177,7 @@ curveadd_2:
 proto 2 1
 frame_dig -2
 frame_dig -1
-ec_add BLS12_381_G1
+ec_add BLS12_381g1
 retsub
 
 // curve_multi_exp
@@ -185,7 +185,7 @@ curvemultiexp_3:
 proto 2 1
 frame_dig -2
 frame_dig -1
-ec_multi_exp BLS12_381_G1
+ec_multi_exp BLS12_381g1
 retsub
 
 // curve_pairing
@@ -193,7 +193,7 @@ curvepairing_4:
 proto 2 1
 frame_dig -2
 frame_dig -1
-ec_pairing_check BLS12_381_G1
+ec_pairing_check BLS12_381g1
 retsub
 
 // update
