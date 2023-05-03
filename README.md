@@ -61,7 +61,7 @@ Contract verified? True
 
 Modify the `.zok` file to change the proof that is generated to something more interesting.
 
-
+Generate a proof using a different library to use the `BN254` curve
 
 
 [zokrates]: https://zokrates.github.io/
