@@ -10,7 +10,7 @@ from .lib.bls12_381 import (
     valid_pairing,
 )
 
-app = bkr.Application("Verifier", build_options=bkr.BuildOptions(avm_version=9))
+app = bkr.Application("Verifier", build_options=bkr.BuildOptions(avm_version=8))
 
 _vk_box_name = "vk"
 vk_box_name = pt.Bytes(_vk_box_name)

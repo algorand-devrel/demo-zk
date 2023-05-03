@@ -1,7 +1,7 @@
 .venv/
 __pycache__/
 .mypy_cache/
-
+sandbox/sandbox/
 zokrates/abi.json
 zokrates/out
 zokrates/witness

@@ -8,13 +8,14 @@ This project is a demo of a ZK application. It is a simple application that allo
 
 ## Use 
 
+First clone this repo down
+
 ### Node Setup
 
-1. Clone the [Sandbox][sandbox] repo
-2. Copy `sandbox/config.zk` into the sandbox repo root
-3. Copy `sandbox/DevModeNetwork.json` into the sandbox repo at `images/algod/DevModeNetwork.json` 
-4. In the sandbox repo, run `./sandbox up zk`
-5. Wait for the sandbox to start up
+cd into `sandbox` directory and run `./setup.sh` to clone down the sandbox and configure it to run with the EC math ops available.
+
+
+
 
 ### Demo Setup
 
