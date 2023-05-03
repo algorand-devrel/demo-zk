@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+
+zokrates/abi.json
+zokrates/out
+zokrates/witness
+zokrates/proof.json
+*.r1cs
+*.wtns
+*.key
