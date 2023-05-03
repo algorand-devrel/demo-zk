@@ -6,7 +6,8 @@ from pathlib import Path
 
 from verifier.lib.bls12_381 import VerificationKey, Proof  # type: ignore
 
-# Takes the proof.json from the zokrates directory
+# Takes the proof.json and verification key 
+# from the zokrates directory
 data_path = Path.cwd() / ".." / "zokrates"
 key_path = data_path / "verification.key"
 proof_path = data_path / "proof.json"

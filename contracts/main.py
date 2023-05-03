@@ -20,7 +20,7 @@ def demo(app_id: int = 0):
     else:
         ac.update()
 
-    boxes = [(0, app._vk_box_name.encode())]
+    boxes = [(0, app.VK_BOX_NAME.encode())]
 
     # Bootstrap with vk
     ac.call(app.bootstrap, vk=get_vk(), boxes=boxes)

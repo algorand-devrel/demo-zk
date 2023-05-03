@@ -12,8 +12,8 @@ from .lib.bls12_381 import (
 
 app = bkr.Application("Verifier", build_options=bkr.BuildOptions(avm_version=8))
 
-_vk_box_name = "vk"
-vk_box_name = pt.Bytes(_vk_box_name)
+VK_BOX_NAME = "vk"
+vk_box_name = pt.Bytes(VK_BOX_NAME)
 opup = pt.OpUp(pt.OpUpMode.OnCall)
 
 
