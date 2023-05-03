@@ -1,6 +1,6 @@
 import beaker
 
-from verifier import Verifier  # type: ignore
+from verifier.application import app, _vk_box_name  # type: ignore
 
 from zokrates import get_proof_and_inputs, get_vk  # type: ignore
 
@@ -9,8 +9,9 @@ def demo(app_id: int = 0):
     acct = beaker.sandbox.get_accounts().pop()
     algod_client = beaker.sandbox.get_algod_client()
 
-    v = Verifier(version=9)
-    ac = beaker.client.ApplicationClient(algod_client, v, app_id=app_id, signer=acct.signer)
+    ac = beaker.client.ApplicationClient(
+        algod_client, app, app_id=app_id, signer=acct.signer
+    )
 
     if app_id == 0:
         app_id, _, _ = ac.create()
@@ -19,18 +20,19 @@ def demo(app_id: int = 0):
     else:
         ac.update()
 
-    boxes = [(0, v._vk_box_name.encode())]
+    boxes = [(0, _vk_box_name.encode())]
 
     # Bootstrap with vk
-    ac.call(v.bootstrap, vk=get_vk(), boxes=boxes)
+    ac.call(app.bootstrap, vk=get_vk(), boxes=boxes)
 
     # Pass proof && inputs to be verified
     proof, inputs = get_proof_and_inputs()
-    result = ac.call(v.verify, inputs=inputs, proof=proof, boxes=boxes)
+    result = ac.call(app.verify, inputs=inputs, proof=proof, boxes=boxes)
     print(f"Contract verified? {result.return_value}")
 
 
 if __name__ == "__main__":
     demo()
 
-    Verifier(version=9).dump("./artifacts")
+    app_spec = app.build(beaker.sandbox.get_algod_client())
+    app_spec.export("artifacts")

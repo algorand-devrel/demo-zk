@@ -6,15 +6,13 @@ from pyteal import (
     Suffix,
     Extract,
     Bytes,
-    ScratchVar,
     Subroutine,
     TealType,
     abi,
-    Seq,
     Int,
 )
 from beaker.lib.inline import InlineAssembly
-from .util import check_size
+from .util import check_size, encode
 
 ##
 # Consts
@@ -103,24 +101,24 @@ def compute_linear_combination(
     inputs: Inputs,
 ):
     return curve_add(
-        curve_multi_exp(Suffix(vk.IC.encode(), Int(key_size * 2)), inputs.encode()),
-        Extract(vk.IC.encode(), Int(0), Int(key_size * 2)),
+        curve_multi_exp(Suffix(encode(vk.IC), Int(key_size * 2)), inputs.encode()),
+        Extract(encode(vk.IC), Int(0), Int(key_size * 2)),
     )
 
 
 @Subroutine(TealType.uint64)
 def valid_pairing(proof: Proof, vk: VerificationKey, vk_x: G1):
     g1_buff = Concat(
-        negate(proof.A.encode()),
-        vk.alpha1.encode(),
+        negate(encode(proof.A)),
+        encode(vk.alpha1),
         vk_x.encode(),
-        proof.C.encode(),
+        encode(proof.C),
     )
     g2_buff = Concat(
-        proof.B.encode(),
-        vk.beta2.encode(),
-        vk.gamma2.encode(),
-        vk.delta2.encode(),
+        encode(proof.B),
+        encode(vk.beta2),
+        encode(vk.gamma2),
+        encode(vk.delta2),
     )
     return curve_pairing(g1_buff, g2_buff)
 

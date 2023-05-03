@@ -21,10 +21,12 @@ app = bkr.Application("Verifier")
 def update():
     return pt.Approve()
 
+
 @app.external(authorize=bkr.Authorize.only(pt.Global.creator_address()))
 def bootstrap(vk: VerificationKey):
     # write the VK to box storage
     return pt.BoxPut(vk_box_name, vk.encode())
+
 
 @app.external
 def verify(inputs: Inputs, proof: Proof, *, output: pt.abi.Bool):
@@ -39,7 +41,7 @@ def verify(inputs: Inputs, proof: Proof, *, output: pt.abi.Bool):
         output.set(valid_pairing(proof, vk, vk_x)),
     )
 
-@pt.ABIReturnSubroutine
+
 def get_vk(*, output: VerificationKey):
     # Read in the VK from our box
     return pt.Seq(
