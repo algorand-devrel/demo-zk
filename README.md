@@ -29,7 +29,7 @@ Run the `generate_proof` script to generate the Verification Key and Proof
 ./generate_proof.sh
 ```
 
-*Note* This must be done prior to running the contract since it relies on the Verification Key and Proof generated during this step
+**Note:** This must be done prior to running the contract since it relies on the Verification Key and Proof generated during this step
 
 ### Demo
 
