@@ -10,7 +10,7 @@ This project is a demo of a ZK application. It is a simple application that allo
 
 ### Node Setup
 
-1. Clone [Sandbox][sandbox]
+1. Clone the [Sandbox][sandbox] repo
 2. Copy `sandbox/config.zk` into the sandbox repo root
 3. Copy `sandbox/DevModeNetwork.json` into the sandbox repo at `images/algod/DevModeNetwork.json` 
 4. In the sandbox repo, run `./sandbox up zk`
@@ -18,7 +18,7 @@ This project is a demo of a ZK application. It is a simple application that allo
 
 ### Demo Setup
 
-Install [Zokrates] using the instructions [here][zokrates-install].
+Install [Zokrates][zokrates] using the instructions [here][zokrates-install].
 
 Run the generate script to generate the proof.
 
@@ -54,9 +54,6 @@ Created app: 1
 Contract verified? True
 ```
 
-[sandbox]: htts://github.com/algorand/sandbox
 [zokrates]: https://zokrates.github.io/
 [zokrates-install]: https://zokrates.github.io/gettingstarted.html#one-line-installation
-
-
-
+[sandbox]: htts://github.com/algorand/sandbox
