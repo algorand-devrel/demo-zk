@@ -5,6 +5,7 @@ Demo ZK
 
 This project is a demo of a simple ZK application that allows verifying a proof generated using the groth16 scheme and the BLS12_381 curve. 
 
+This demo only shows the verification of a proof using BLS12_381 but BN254 is also supported in the AVM. However, Zokrates does not support [BN254 curve][zokrates-curves], so a different library will be needed to generate a proof for that curve.  
 
 ## Use 
 
@@ -58,7 +59,6 @@ Contract verified? True
 
 Modify the `.zok` file to change the proof that is generated to something more interesting.
 
-This demo only shows the verification of a proof using BLS12_381 but BN254 is also supported in the AVM. However, Zokrates does not support [BN254 curve][zokrates-curves], so a different library will be needed to generate a proof for that curve.  
 
 
 
