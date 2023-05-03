@@ -2,6 +2,13 @@
     "name": "Verifier",
     "methods": [
         {
+            "name": "update",
+            "args": [],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
             "name": "bootstrap",
             "args": [
                 {

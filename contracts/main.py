@@ -32,7 +32,7 @@ def demo(app_id: int = 0):
 
 
 if __name__ == "__main__":
-    demo()
-
     app_spec = app.build(beaker.sandbox.get_algod_client())
     app_spec.export("artifacts")
+
+    demo()
