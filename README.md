@@ -11,6 +11,8 @@ This demo only shows the verification of a proof using BLS12_381 but BN254 is al
 
 First clone this repo down
 
+**Note**: This demo requires Python >= 3.10 
+
 ### Node Setup
 
 In the `sandbox` directory, run `./setup.sh` to 
