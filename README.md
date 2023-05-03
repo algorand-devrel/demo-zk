@@ -45,15 +45,10 @@ $ source .venv/bin/activate
 (.venv) $ pip install -r requirements.txt
 ```
 
-Run the demo
+Run the demo 
 
 ```bash
 (.venv) $ cd contracts 
-(.venv) $ python main.py
-```
-
-You should see some output like 
-```bash
 (.venv) $ python main.py
 Created app: 1
 Contract verified? True
