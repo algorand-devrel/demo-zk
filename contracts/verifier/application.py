@@ -31,8 +31,9 @@ def bootstrap(vk: VerificationKey):
 @app.external
 def verify(inputs: Inputs, proof: Proof, *, output: pt.abi.Bool):
     return pt.Seq(
-        # idk if this will need to change but its enough for now
-        opup.ensure_budget(pt.Int(13500)),
+        # TODO: a more precise opcode budget, this works but is probably
+        # more than we need
+        opup.ensure_budget(pt.Int(20000)),
         # Fetch the VK from box storage
         get_vk(output=(vk := VerificationKey())),  # type: ignore
         # Compute vk_x from sum of inputs

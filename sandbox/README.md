@@ -8,5 +8,5 @@ Namely it requires:
 
 A sandbox running off the ec-math branch specified in `config.zk`
 
-The `ProtocolVersion` set to `future` in the `DevModeNetwork.json` file
+The `ConsensusProtocol` set to `future` in the `DevModeNetwork.json` file
 

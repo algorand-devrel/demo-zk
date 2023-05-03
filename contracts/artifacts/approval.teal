@@ -226,7 +226,7 @@ proto 2 1
 intc_0 // 0
 bytec_0 // ""
 dup
-pushint 13500 // 13500
+pushint 20000 // 20000
 pushint 10 // 10
 +
 store 3

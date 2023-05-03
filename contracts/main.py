@@ -1,6 +1,6 @@
 import beaker
 
-from verifier.application import app, _vk_box_name  # type: ignore
+import verifier.application as app  # type: ignore
 
 from zokrates import get_proof_and_inputs, get_vk  # type: ignore
 
@@ -10,7 +10,7 @@ def demo(app_id: int = 0):
     algod_client = beaker.sandbox.get_algod_client()
 
     ac = beaker.client.ApplicationClient(
-        algod_client, app, app_id=app_id, signer=acct.signer
+        algod_client, app.app, app_id=app_id, signer=acct.signer
     )
 
     if app_id == 0:
@@ -20,7 +20,7 @@ def demo(app_id: int = 0):
     else:
         ac.update()
 
-    boxes = [(0, _vk_box_name.encode())]
+    boxes = [(0, app._vk_box_name.encode())]
 
     # Bootstrap with vk
     ac.call(app.bootstrap, vk=get_vk(), boxes=boxes)
@@ -32,7 +32,7 @@ def demo(app_id: int = 0):
 
 
 if __name__ == "__main__":
-    app_spec = app.build(beaker.sandbox.get_algod_client())
+    app_spec = app.app.build(beaker.sandbox.get_algod_client())
     app_spec.export("artifacts")
 
     demo()

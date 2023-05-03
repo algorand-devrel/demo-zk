@@ -21,7 +21,7 @@
             }
         ],
         "DevMode": true,
-        "ProtocolVersion":"future",
+        "ConsensusProtocol":"future",
         "RewardsPoolBalance": 0
     },
     "Nodes": [
