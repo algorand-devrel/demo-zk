@@ -10,11 +10,11 @@ from .lib.bls12_381 import (
     valid_pairing,
 )
 
+app = bkr.Application("Verifier", build_options=bkr.BuildOptions(avm_version=9))
+
 _vk_box_name = "vk"
 vk_box_name = pt.Bytes(_vk_box_name)
 opup = pt.OpUp(pt.OpUpMode.OnCall)
-
-app = bkr.Application("Verifier", build_options=bkr.BuildOptions(avm_version=9))
 
 
 @app.update(authorize=bkr.Authorize.only(pt.Global.creator_address()))

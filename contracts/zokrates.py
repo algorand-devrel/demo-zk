@@ -2,16 +2,19 @@ import json
 import algosdk.abi as sdkabi  # type: ignore
 
 from typing import Any
+from pathlib import Path
 
 from verifier.lib.bls12_381 import VerificationKey, Proof  # type: ignore
 
-# TODO: return the actual types from these methods instead of Any
+# Takes the proof.json from the zokrates directory
+data_path = Path.cwd() / ".." / "zokrates"
+key_path = data_path / "verification.key"
+proof_path = data_path / "proof.json"
+
 
 vk_codec = sdkabi.ABIType.from_string(str(VerificationKey().type_spec()))
 proof_codec = sdkabi.ABIType.from_string(str(Proof().type_spec()))
 input_codec = sdkabi.ABIType.from_string("byte[32][1]")
-
-data_path = "../zokrates"
 
 
 def decode_scalar(v: str) -> bytes:
@@ -32,8 +35,8 @@ def decode_g2(coords: list[list[str]]) -> bytes:
     return x_0 + x_1 + y_0 + y_1
 
 
-def get_proof_and_inputs() -> tuple[Any, Any]:
-    with open(data_path + "/proof.json", "r") as f:
+def get_proof_and_inputs() -> tuple[sdkabi.ABIType, sdkabi.ABIType]:
+    with open(proof_path, "r") as f:
         _proof = json.loads(f.read())
 
     proof = _proof["proof"]
@@ -47,8 +50,9 @@ def get_proof_and_inputs() -> tuple[Any, Any]:
 
 
 def get_vk() -> Any:
-    with open(data_path + "/verification.key", "r") as f:
+    with open(key_path, "r") as f:
         vk = json.loads(f.read())
+
     alpha = decode_g1(vk["alpha"])
     beta = decode_g2(vk["beta"])
     gamma = decode_g2(vk["gamma"])
