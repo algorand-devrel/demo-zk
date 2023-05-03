@@ -1,9 +1,9 @@
 Demo ZK
 -------
 
-:warning: This is a demo project, it is not intended to be used in production.
+:warning: This is a demo project, it is not intended to be used in production. :warning: 
 
-This project is a demo of a simple ZK application that allows verifying a proof generated using the groth16 scheme. 
+This project is a demo of a simple ZK application that allows verifying a proof generated using the groth16 scheme and the BLS12_381 curve. 
 
 
 ## Use 
@@ -22,7 +22,7 @@ In the `sandbox` directory, run `./setup.sh` to
 
 Install [Zokrates][zokrates] using the instructions [here][zokrates-install].
 
-Run the generate script to generate the proof.
+Run the `generate_proof` script to generate the Verification Key and Proof
 
 ```bash
 ./generate_proof.sh
@@ -32,7 +32,7 @@ Run the generate script to generate the proof.
 
 ### Demo
 
-Install python prereqs
+Install python prerequisites
 
 ```bash
 $ python -m venv .venv
