@@ -21,6 +21,8 @@ In the `sandbox` directory, run `./setup.sh` to
 2. setup configuration, so it may run with the EC math ops
 3. start the sandbox node
 
+**Note**: This will start a sandbox node using the `barnjamin/ec-math-wiggle` branch of `go-algorand`, which has the EC math ops enabled in version 8 of the AVM. The AVM version they'll be enabled with is more likely to be version 10, but this is sufficient to start testing. 
+
 ### Demo Setup
 
 Install [Zokrates][zokrates] using the instructions [here][zokrates-install].
