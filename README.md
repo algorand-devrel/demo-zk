@@ -56,4 +56,4 @@ Contract verified? True
 
 [zokrates]: https://zokrates.github.io/
 [zokrates-install]: https://zokrates.github.io/gettingstarted.html#one-line-installation
-[sandbox]: htts://github.com/algorand/sandbox
+[sandbox]: https://github.com/algorand/sandbox
