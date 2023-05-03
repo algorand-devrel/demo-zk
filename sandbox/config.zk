@@ -1,6 +1,6 @@
 export ALGOD_CHANNEL=""
-export ALGOD_URL="https://github.com/jannotti/go-algorand"
-export ALGOD_BRANCH="ec-math"
+export ALGOD_URL="https://github.com/barnjamin/go-algorand"
+export ALGOD_BRANCH="ec-math-wiggle"
 export ALGOD_SHA=""
 export NETWORK=""
 export NETWORK_TEMPLATE="images/algod/DevModeNetwork.json"
